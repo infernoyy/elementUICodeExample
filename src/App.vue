@@ -5,15 +5,17 @@
 			<el-button @click="startHacking">Start</el-button>
 		</div> -->
 		<radioVue></radioVue>
+		<checkbox-vue></checkbox-vue>
 	</div>
 </template>
 
 <script>
 	import radioVue from './components/radio.vue'
+	import checkboxVue from './components/checkbox.vue'
 
 	export default {
 		components: {
-			radioVue
+			radioVue,checkboxVue
 		},
 		methods: {
 			startHacking() {
