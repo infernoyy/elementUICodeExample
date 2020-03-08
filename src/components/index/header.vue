@@ -8,14 +8,18 @@
 						<el-menu-item index="1">首页</el-menu-item>
 						<el-submenu index="2">
 							<template slot="title">博客中心</template>
-							<el-menu-item index="2-1">个人简历</el-menu-item>
-							<el-menu-item index="2-2">博客详情</el-menu-item>
-							<el-submenu index="2-3">
+							<el-menu-item index="2-0">
+								<el-link href="https://infernoyy.github.io/cv" type="primary" target="_blank">个人简历</el-link>
+							</el-menu-item>
+							<el-menu-item index="2-1">
+								<el-link href="https://infernoyy.github.io/" type="primary" target="_blank">博客详情</el-link>
+							</el-menu-item>
+							<el-submenu index="2-2">
 								<template slot="title">联系我</template>
-								<el-menu-item index="2-4-1" @click="dialogVisible = true">
+								<el-menu-item index="2-3-1" @click="dialogVisible = true">
 									<el-button type="text">微信</el-button>
 								</el-menu-item>
-								<el-menu-item index="2-4-2" @click="openEmailInfo">
+								<el-menu-item index="2-3-2" @click="openEmailInfo">
 									<el-button type="text">邮箱</el-button>
 								</el-menu-item>
 							</el-submenu>
@@ -25,11 +29,19 @@
 							<i class="el-icon-search"></i>
 							<el-link href="https://www.baidu.com" type="primary" target="_blank">百度一下</el-link>
 						</el-menu-item>
+						<el-submenu index="5">
+							<template slot="title"><i class="el-icon-user"></i>个人中心</template>
+							<el-menu-item index="5-0">
+								<el-button @click="SignIn">登录</el-button>
+							</el-menu-item>
+							<el-menu-item index="5-1">
+								<el-button @click="SignUp">注册</el-button>
+							</el-menu-item>
+						</el-submenu>
 					</el-menu>
 				</div>
 			</div>
 		</div>
-
 
 		<el-dialog title="微信二维码" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
 			<el-image :src="wxCode"></el-image>
@@ -66,6 +78,12 @@
 					message: '1085435176@qq.com',
 					duration: 0
 				});
+			},
+			SignIn(){
+				console.log('SignIn')
+			},
+			SignUp(){
+				console.log('SignUp')
 			}
 		}
 	}

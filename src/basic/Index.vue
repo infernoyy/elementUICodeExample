@@ -11,7 +11,13 @@
 			</el-aside>
 			<el-main>
 				<my-slider>
-					<my-main></my-main>
+					  <p>
+						<router-link to="/signIn">Go to signIn</router-link>
+						<router-link to="/signUp">Go to signUp</router-link>
+					  </p>
+					  <!-- 路由出口 -->
+					  <router-view></router-view>
+					<!-- <my-main></my-main> -->
 				</my-slider>
 			</el-main>
 		</el-container>
